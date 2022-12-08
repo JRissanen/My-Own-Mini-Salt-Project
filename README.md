@@ -54,7 +54,7 @@ After this I restarted the minion-service and checked its status with commands: 
 `sudo systemctl restart salt-minion.service` and `sudo systemctl status salt-minion.service`.
 
 Then I went on to the Master-PC and checked all the minion keys with command: `sudo salt-key`. </br>
-After that I accepted the unaccpetd key from Minion-PC with the command: `sudo salt-key -A`.
+After that I accepted the unaccpeted key from Minion-PC with the command: `sudo salt-key -A`.
 
 Lastly it was time to check if I had set the Salt master-minion architecture properly. </br>
 I ran the commands: `sudo salt '*' cmd.run whoami` and `sudo salt '*' cmd.run whoami` as to check that the Minion-PC answered correctly when I called all minions with the Master-PC.
@@ -63,12 +63,17 @@ I ran the commands: `sudo salt '*' cmd.run whoami` and `sudo salt '*' cmd.run wh
 
 I was glad to see that everything worked properly. The connection was created succesfully and I was now ready to move on to making salt states on the Master-PC.
 
+__After thoughts and information:__
 
+When you set the master ip-address on the minion pc's minion configuration file, you can also set a unique ID applying the same logic. Just make sure you use the same amount of spaces between the option and the value in both parts, for example:
+```
+ master: <ip-address>
+ id:  <unique ID>
+```
+I used two spaces after the "master:" part.
 
-
-
-
-
+When I used the command: `cat` to show the changes I made in the minion configuration file, I also gave it some parameters to remove all the comments from the output to make it easier to read. Credit for this neat little trick belongs to Kevin van Zonneveld and here is a link to the site where I found the command. </br>
+Link to Kev's site: https://kvz.io/cat-a-file-without-the-comments.html
 
 
 
