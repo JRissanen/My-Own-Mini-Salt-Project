@@ -20,7 +20,7 @@ __The Salt-master computer:__ </br>
 __The Salt-minion computer:__ </br>
 ![Screenshot 2022-12-07 183029](https://user-images.githubusercontent.com/116954333/206472854-0e088c31-2aa0-4d76-870c-71357ad60f5d.png)
 
-# The beginning of the project
+# Part 1: The Beginning Of The Project
 
 The first thing after both computers had installed succesfully was to change the network for both computers from NAT to Briged adapter as to get both computers a different ip-address so that they can communicate with each other.
 
@@ -63,7 +63,7 @@ I ran the commands: `sudo salt '*' cmd.run whoami` and `sudo salt '*' cmd.run wh
 
 I was glad to see that everything worked properly. The connection was created succesfully and I was now ready to move on to making salt states on the Master-PC.
 
-__After thoughts and information:__
+__After Thoughts And Information:__
 
 When you set the master ip-address on the minion pc's minion configuration file, you can also set a unique ID applying the same logic. Just make sure you use the same amount of spaces between the option and the value in both parts, for example:
 ```
@@ -74,6 +74,8 @@ I used two spaces after the "master:" part.
 
 When I used the command: `cat` to show the changes I made in the minion configuration file, I also gave it some parameters to remove all the comments from the output to make it easier to read. Credit for this neat little trick belongs to Kevin van Zonneveld and here is a link to the site where I found the command: https://kvz.io/cat-a-file-without-the-comments.html
 
+
+# Part 2: Salt States
 
 
 
