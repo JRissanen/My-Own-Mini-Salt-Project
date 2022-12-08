@@ -12,10 +12,10 @@ I created both computers as virtual machines in VirtualBox version 6.1. I will h
 
 I named the computers as the following screen captures show:
 
-__The Salt-master computer:__
+__The Salt-master computer:__ </br>
 ![Screenshot 2022-12-07 175657](https://user-images.githubusercontent.com/116954333/206472816-d818a864-b447-4a3e-991e-b5ba9a0af243.png)
 
-__The Salt-minion computer:__
+__The Salt-minion computer:__ </br>
 ![Screenshot 2022-12-07 183029](https://user-images.githubusercontent.com/116954333/206472854-0e088c31-2aa0-4d76-870c-71357ad60f5d.png)
 
 
