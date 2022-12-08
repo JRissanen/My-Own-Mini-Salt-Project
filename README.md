@@ -37,18 +37,31 @@ I also run the command: `sudo apt-get update` as to ensure that all the packeges
 
 __Commands were:__
 
-__Master-PC__
+__Master-PC:__
 ```
  juliusmaster@Master-PC:~$ sudo apt-get update
  juliusmaster@Master-PC:~$ sudo apt-get -y install salt-master
 ```
 
-__Minion-PC__
+__Minion-PC:__
 ```
  juliusminion@Minion-PC:~$ sudo apt-get update
  juliusminion@Minion-PC:~$ sudo apt-get -y install salt-minion
 ```
 
+Next I went on to the Minion-PC to change the settings of the salt-minion configuration file to set the Master PC's ip-address at the top pf the configuration file so that the Minion-PC would know who the Master-PC is. I used micro text editor to do this. </br>
+After this I restarted the minion-service and checked its status with commands: </br>
+`sudo systemctl restart salt-minion.service` and `sudo systemctl status salt-minion.service`.
+
+Then I went on to the Master-PC and checked all the minion keys with command: `sudo salt-key`. </br>
+After that I accepted the unaccpetd key from Minion-PC with the command: `sudo salt-key -A`.
+
+Lastly it was time to check if I had set the Salt master-minion architecture properly. </br>
+I ran the commands: `sudo salt '*' cmd.run whoami` and `sudo salt '*' cmd.run whoami` as to check that the Minion-PC answered correctly when I called all minions with the Master-PC.
+
+![Screenshot 2022-12-08 180642](https://user-images.githubusercontent.com/116954333/206498522-b502dd7f-4fcd-4277-a809-0c14f598150e.png)
+
+I was glad to see that everything worked properly. The connection was created succesfully and I was now ready to move on to making salt states on the Master-PC.
 
 
 
