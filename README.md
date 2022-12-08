@@ -72,8 +72,7 @@ When you set the master ip-address on the minion pc's minion configuration file,
 ```
 I used two spaces after the "master:" part.
 
-When I used the command: `cat` to show the changes I made in the minion configuration file, I also gave it some parameters to remove all the comments from the output to make it easier to read. Credit for this neat little trick belongs to Kevin van Zonneveld and here is a link to the site where I found the command. </br>
-Link to Kev's site: https://kvz.io/cat-a-file-without-the-comments.html
+When I used the command: `cat` to show the changes I made in the minion configuration file, I also gave it some parameters to remove all the comments from the output to make it easier to read. Credit for this neat little trick belongs to Kevin van Zonneveld and here is a link to the site where I found the command: https://kvz.io/cat-a-file-without-the-comments.html
 
 
 
