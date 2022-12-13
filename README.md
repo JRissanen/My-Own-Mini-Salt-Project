@@ -3,7 +3,7 @@ This is a repository for Configuration Management Systems - Palvelinten Hallinta
 
 # Introduction
 
-This Salt project's purpose is to demonstrate some of the things we were taught during this eight week course. I will try to make a salt state that downloads and installs some useful applications for ICT students, such as Zoom video confrencing and Visual Studio Code.
+This Salt project's purpose is to demonstrate some of the things we were taught during this eight week course. I will try to make a salt state that downloads and installs some useful applications for ICT students, such as Micro texteditor and Visual Studio Code.
 
 This project will also show you how you can make two new virtual machines on VirtualBox communicate with each other with SaltStack as one of the new machines being a Salt-master computer and the other being a Salt-minion computer.
 
@@ -74,8 +74,9 @@ I used two spaces after the "master:" part.
 
 When I used the command: `cat` to show the changes I made in the minion configuration file, I also gave it some parameters to remove all the comments from the output to make it easier to read. Credit for this neat little trick belongs to Kevin van Zonneveld and here is a link to the site where I found the command: https://kvz.io/cat-a-file-without-the-comments.html
 
-
 # Part 2: Salt States
+
+To begin this part, I needed to create the required "/srv/salt" directory on the Master-PC, where all the salt states are saved for the Minion-PC (or PCs depending how many you have).
 
 
 
