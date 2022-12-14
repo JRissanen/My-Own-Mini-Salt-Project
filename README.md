@@ -91,9 +91,9 @@ All the command are done on the __Master-PC__:
 And I moved into the directory: </br>
 `juliusmaster@Master-PC:~$ cd /srv/salt/MyOwnMiniProject`.
 
-Then I created an "index.html" file which the apache web server is going to use when the salt state is called:
+Then I created an index.html-file which the apache web server is going to use when the salt state is called: </br>
 `juliusmaster@Master-PC:/srv/salt/MyOwnMiniProject$ sudoedit ReadyToUse_index.html`. </br>
-The "index.html" file is just semi empty "html" file:
+The index.html-file is just semi empty html-file:
 ```
 <!doctype html>
 <html>
@@ -106,9 +106,9 @@ The "index.html" file is just semi empty "html" file:
 </html>
 ```
 
-After this I created the "init.sls" file which every salt state needs to operate:
-`juliusmaster@Master-PC:/srv/salt/MyOwnMiniProject$ sudoedit init.sls`.
-The "init.sls" file:
+After this I created the init.sls-file which every salt state needs to operate: </br>
+`juliusmaster@Master-PC:/srv/salt/MyOwnMiniProject$ sudoedit init.sls`. </br>
+The init.sls-file:
 ```
 apache2:
   pkg.installed
@@ -124,6 +124,27 @@ apache2service:
     - watch:
       - cmd: 'a2enmod userdir'
 ```
+First row of the "init.sls" file defines the ID of the data I want the salt state to operate, in this case apache2. </br>
+Second row tells the function I want, in this case I want apache2 to be installed. </br>
+
+Third row defines the location of the data I want to operate. Since all html-files in Linux are stored in the "/var/www/html/index.html" directory, that is also what I want to use. </br>
+Fourth row gives the function to operate a file in that directory. </br>
+Fifth row gives the source of the file I want to operate, which in this case is the file I created earlier.
+
+Sixth row targets the apache2 command which allows users to enable user directories. </br>
+Seventh row gives the function to run the above command. </br>
+Eighth row is a parameter that tells the state to only run the command if a file doesn't exist already. In this case the userdir configuration file. </br>
+
+Ninth row I want the apache2 web server to keep running after the initial installation, however I can't use the basic "apache2" ID because I already defined it in the first row to be installed. Luckily there is an easy trick to get around it. Every service application has two names we can use: the default one and an another one that ends with .service. In this case I already used the default "apache2" so now I used the other one which is apache2.service.  </br>
+
+Tenth row defines that the service keeps running. </br>
+Eleventh row defines the name of the service again. </br>
+Twelfth row is the salt watcher function which takes action incase there are modifications in whatever it watches. </br>
+Thirteenth row defines the action of the watcher function in this case it is the command that enables the user directories in apache.
+
+Screen capture of my Master-PC's terminal:
+
+![Screenshot 2022-12-13 174841](https://user-images.githubusercontent.com/116954333/207609769-2c6b3872-9b8e-48ae-83b7-9bf5393a24ac.png)
 
 
 
@@ -166,16 +187,15 @@ apache2service:
 
 
 
+__Sources:__
 
+https://docs.saltproject.io/en/latest/topics/tutorials/starting_states.html
 
+https://terokarvinen.com/2022/palvelinten-hallinta-2022p2/?fromSearch=Configuration%20Management%20Systems
 
+https://terokarvinen.com//2018/apache-user-homepages-automatically-salt-package-file-service-example/
 
-
-
-
-
-
-
+https://kvz.io/cat-a-file-without-the-comments.html
 
 
 
