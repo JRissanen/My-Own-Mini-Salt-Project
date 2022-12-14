@@ -145,7 +145,7 @@ Eleventh row defines the name of the service again. </br>
 Twelfth row is the salt watcher function which takes action incase there are modifications in whatever it watches. </br>
 Thirteenth row defines the action of the watcher function in this case it is the command that enables the user directories in apache.
 
-Screen capture of my Master-PC's terminal:
+Screen capture of my __Master-PC__'s terminal:
 
 ![Screenshot 2022-12-14 154252](https://user-images.githubusercontent.com/116954333/207610902-c1dcd3d7-03df-447c-9312-dc0986510bfe.png)
 
