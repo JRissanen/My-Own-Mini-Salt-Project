@@ -85,7 +85,7 @@ When I used the command: `cat` to show the changes I made in the minion configur
 
 To begin this part, I needed to create the required "/srv/salt" directory on the Master-PC, where all the salt states are saved for the Minion-PC (or PCs depending how many you have). Also in that directory a sub directory as to keep the salt states organized. The sub directory's name will also be the name of the salt state you will use to apply the state to your minion(s) later on, so keep that in mind.
 
-All the command are done on the __Master-PC__:
+All the commands are done on the __Master-PC__:
 
 `juliusmaster@Master-PC:~$ sudo mkdir /srv/salt/MyOwnMiniProject`. </br>
 And I moved into the directory: </br>
@@ -159,25 +159,52 @@ Source for this information: https://superuser.com/questions/785187/sudoedit-why
 
 Every indentation in the init.sls files needs to be exactly __two__ spaces for the state to work properly.
 
-# Part 3: Running The State Locally
+# Part 3: Running The Salt State Locally
 
+Now everything was ready for testing. </br>
 
+All the commands are done on the __Master-PC__:
 
+To run the salt state locally, to see if it works first on the Master-PC before trying to implement it on the Minion-PC, I used the following command: </br>
+`juliusmaster@Master-PC:~$ sudo salt-call --local state.apply MyOwnMiniProject`. 
 
+The print it gave was quite long, but in the end the results were successful:
 
+![Screenshot 2022-12-13 175146](https://user-images.githubusercontent.com/116954333/207619125-908187f5-8a04-4045-834f-4102353c8257.png)
 
+The stdout print told me that I needed to restart apache2 to activate the new configuration so I did: </br>
+`juliusmaster@Master-PC:~$ sudo systemctl restart apache2`.
 
+Next from the GUI I checked if everything indeed worked as planned. </br>
+I opened Mozilla FireFox web browser and typed "localhost" into the search bar, and everything looked the way it was supposed to:
 
+![Screenshot 2022-12-13 180047](https://user-images.githubusercontent.com/116954333/207620857-0c5d5027-ae77-438d-ad90-b4c4b577e019.png)
 
+# Part 4: Applying The Salt State To The Minion-PC
 
+Since the local test was a success it was now time for the final task to test if the salt state could be applied over the Network to a Minion-PC.
 
+First on the __Minion-PC__ I opened Mozilla FireFox web browser and typed "localhost" into the search bar to see that nothing was yet made and I would get "Unable to connect" error, which I did get:
 
+![Screenshot 2022-12-14 162857](https://user-images.githubusercontent.com/116954333/207623282-3410abea-84d0-4547-81ed-f60b545c8047.png)
 
+Now on the __Master-PC__ I ran the following commands: </br>
+To test if the Minion-PC was active and would answer: </br>
+`juliusmaster@Master-PC:~$ sudo salt '*' cmd.run hostname`. </br>
+And to apply the previously created salt state to all the minions (in this case I only had the one: Minion-PC):
+`juliusmaster@Master-PC:~$ sudo salt '*' state.apply MyOwnMiniProject`.
 
+The end results were succesful! </br>
+The Salt State was applied correctly without any problems. </br>
+On the __Minion-PC__ I just had to do the same steps as on the __Master-PC__:
+I had to restart apache2 for the configurations to be activated: </br>
+`juliusminion@Minion-PC:~$ sudo systemctl restart apache2`.
 
+Then I just had to write the "localhost" into the search bar again and it worked!
 
+![Screenshot 2022-12-14 164515](https://user-images.githubusercontent.com/116954333/207628190-e71d021c-af21-4744-add4-988582136efa.png)
 
-
+# Conclusion
 
 
 
