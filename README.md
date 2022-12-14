@@ -225,15 +225,19 @@ https://docs.saltproject.io/en/latest/topics/tutorials/starting_states.html
 kvz.io. 2007. Cat a File, Without the Comments. Available:
 https://kvz.io/cat-a-file-without-the-comments.html
 
-
+Canonical Ltd. 2018. Ubuntu 22.04.1 LTS (Jammy Jellyfish). Available:
 https://releases.ubuntu.com/22.04/
 
+StackExchange. superuser. jonatan. 2014. sudoedit: why use it over sudo vi?. Available:
 https://superuser.com/questions/785187/sudoedit-why-use-it-over-sudo-vi
 
+Karvinen, T. 2022. Configuration Management Systems - Palvelinten Hallinta. Available:
 https://terokarvinen.com/2022/palvelinten-hallinta-2022p2/
 
+Karvinen, T. 2018. Apache User Homepages Automatically – Salt Package-File-Service Example. Available:
 https://terokarvinen.com//2018/apache-user-homepages-automatically-salt-package-file-service-example/
 
+HashiCorp. Vagrant. 2022. Development environments made easy. Available:
 https://www.vagrantup.com/
 
 
