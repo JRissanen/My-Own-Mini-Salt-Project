@@ -136,7 +136,6 @@ Seventh row gives the function to run the above command. </br>
 Eighth row is a parameter that tells the state to only run the command if a file doesn't exist already. In this case the userdir configuration file. </br>
 
 Ninth row I want the apache2 web server to keep running after the initial installation, however I can't use the basic "apache2" ID because I already defined it in the first row to be installed. Luckily there is an easy trick to get around it. Every service application has two names we can use: the default one and an another one that ends with .service. In this case I already used the default "apache2" so now I used the other one which is apache2.service.  </br>
-
 Tenth row defines that the service keeps running. </br>
 Eleventh row defines the name of the service again. </br>
 Twelfth row is the salt watcher function which takes action incase there are modifications in whatever it watches. </br>
@@ -144,10 +143,23 @@ Thirteenth row defines the action of the watcher function in this case it is the
 
 Screen capture of my Master-PC's terminal:
 
-![Screenshot 2022-12-13 174841](https://user-images.githubusercontent.com/116954333/207609769-2c6b3872-9b8e-48ae-83b7-9bf5393a24ac.png)
+![Screenshot 2022-12-14 154252](https://user-images.githubusercontent.com/116954333/207610902-c1dcd3d7-03df-447c-9312-dc0986510bfe.png)
+
+For this part I used Tero Karvinen's apache2 with salt example: </br>
+https://terokarvinen.com//2018/apache-user-homepages-automatically-salt-package-file-service-example/
+
+And for the meanings and explanations of each row in the init.sls-file I used SaltStack's own article:
+https://docs.saltproject.io/en/latest/topics/tutorials/starting_states.html
 
 
+__After Thoughts And Information:__
 
+The command `sudoedit <file name>` creats a copy of the file you wish to edit and opens it with your preferred texteditor and allows you to make changes to it as the the current user you are logged in with. After exiting and saving Nano, it compares the copy of the original file and the original file and then overwrites the original file. I could have also used the command `sudo nano <file name>` to edit the files but that would require password and would open the files as root. Nothing wrong with that method either I'm just more used to the `sudoedit` command. </br>
+Source for this information: https://superuser.com/questions/785187/sudoedit-why-use-it-over-sudo-vi
+
+Every indentation in the init.sls files needs to be exactly __two__ spaces for the state to work properly.
+
+# Part 3: Running The State Locally
 
 
 
@@ -197,7 +209,7 @@ https://terokarvinen.com//2018/apache-user-homepages-automatically-salt-package-
 
 https://kvz.io/cat-a-file-without-the-comments.html
 
-
+https://superuser.com/questions/785187/sudoedit-why-use-it-over-sudo-vi
 
 
 
