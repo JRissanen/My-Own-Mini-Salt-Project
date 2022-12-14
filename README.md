@@ -3,7 +3,7 @@ This is a repository for Configuration Management Systems - Palvelinten Hallinta
 
 # Introduction
 
-This Salt project's purpose is to demonstrate some of the things we were taught during this eight week course. I will try to make a salt state that downloads and installs some useful applications for ICT students, such as Micro texteditor and Visual Studio Code.
+This Salt project's purpose is to demonstrate some of the things we were taught during this eight week course. I will try to make a salt state that downloads and installs apache2 and also sets up the default web page.
 
 This project will also show you how you can make two new virtual machines on VirtualBox communicate with each other with SaltStack as one of the new machines being a Salt-master computer and the other being a Salt-minion computer.
 
@@ -19,6 +19,13 @@ __The Salt-master computer:__ </br>
 
 __The Salt-minion computer:__ </br>
 ![Screenshot 2022-12-07 183029](https://user-images.githubusercontent.com/116954333/206472854-0e088c31-2aa0-4d76-870c-71357ad60f5d.png)
+
+I also want to point out that everything I do in this project can also be done with Vagrant virtual machines and I would personally even recommend it. Just for the sake of this project, I wanted to create everything with using just VirtualBox as most users are more familiar with it rahter than Vagrant. That being said if you got curious about Vagrant I will link some good articles, where you can find more information about it. </br>
+Karvinen 2017: https://terokarvinen.com/2017/04/11/vagrant-revisited-install-boot-new-virtual-machine-in-31-seconds/ </br>
+               Nowadays Tero Karvinen recommends using 'vagrant init debian/bullseye64' instead of vagrant init bento/ubuntu-16.04
+               
+Also my own exercises done based on Tero Karvinen's article and teaching (in Finnish): https://github.com/JRissanen/h6-Kulkurin-projekti               
+
 
 # Part 1: The Beginning Of The Project
 
