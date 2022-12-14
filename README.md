@@ -22,7 +22,7 @@ __The Salt-minion computer:__ </br>
 
 I also want to point out that everything I do in this project can also be done with Vagrant virtual machines and I would personally even recommend it. Just for the sake of this project, I wanted to create everything with using just VirtualBox as most users are more familiar with it rahter than Vagrant. That being said if you got curious about Vagrant I will link some good articles, where you can find more information about it. </br>
 Karvinen 2017: https://terokarvinen.com/2017/04/11/vagrant-revisited-install-boot-new-virtual-machine-in-31-seconds/ </br>
-               Nowadays Tero Karvinen recommends using 'vagrant init debian/bullseye64' instead of vagrant init bento/ubuntu-16.04
+Nowadays Tero Karvinen recommends using `vagrant init debian/bullseye64` instead of `vagrant init bento/ubuntu-16.04`.
                
 Also my own exercises done based on Tero Karvinen's article and teaching (in Finnish): https://github.com/JRissanen/h6-Kulkurin-projekti               
 
@@ -81,13 +81,49 @@ I used two spaces after the "master:" part.
 
 When I used the command: `cat` to show the changes I made in the minion configuration file, I also gave it some parameters to remove all the comments from the output to make it easier to read. Credit for this neat little trick belongs to Kevin van Zonneveld and here is a link to the site where I found the command: https://kvz.io/cat-a-file-without-the-comments.html
 
-# Part 2: Salt States
+# Part 2: Creating The Salt State And an Index.html-file
 
-To begin this part, I needed to create the required "/srv/salt" directory on the Master-PC, where all the salt states are saved for the Minion-PC (or PCs depending how many you have).
+To begin this part, I needed to create the required "/srv/salt" directory on the Master-PC, where all the salt states are saved for the Minion-PC (or PCs depending how many you have). Also in that directory a sub directory as to keep the salt states organized. The sub directory's name will also be the name of the salt state you will use to apply the state to your minion(s) later on, so keep that in mind.
 
+All the command are done on the __Master-PC__:
 
+`juliusmaster@Master-PC:~$ sudo mkdir /srv/salt/MyOwnMiniProject`. </br>
+And I moved into the directory: </br>
+`juliusmaster@Master-PC:~$ cd /srv/salt/MyOwnMiniProject`.
 
+Then I created an "index.html" file which the apache web server is going to use when the salt state is called:
+`juliusmaster@Master-PC:/srv/salt/MyOwnMiniProject$ sudoedit ReadyToUse_index.html`. </br>
+The "index.html" file is just semi empty "html" file:
+```
+<!doctype html>
+<html>
+  <head>
+    <title>ReadyToUse</title>
+  </head>
+  <body>
+    Feel free to cutomise your new ready to use web page!
+  </body>
+</html>
+```
 
+After this I created the "init.sls" file which every salt state needs to operate:
+`juliusmaster@Master-PC:/srv/salt/MyOwnMiniProject$ sudoedit init.sls`.
+The "init.sls" file:
+```
+apache2:
+  pkg.installed
+/var/www/html/index.html:
+  file.managed:
+    - source: salt://MyOwnMiniProject/ReadyToUse_index.html
+a2enmod userdir:
+  cmd.run:
+   - creates: /etc/apache2/mods-enabled/userdir.conf
+apache2service:
+  service.running:
+    - name: apache2
+    - watch:
+      - cmd: 'a2enmod userdir'
+```
 
 
 
