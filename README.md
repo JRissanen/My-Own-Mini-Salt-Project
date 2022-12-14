@@ -216,16 +216,29 @@ This project is in my opinion very beginner friendly and supports even a follow 
 
 I think I achieved the main goal of the whole course which was to learn how to use the Salt Master and Minion architecture.
 
-__Sources:__
 
+## Sources:
+
+SaltStack. 2022. HOW DO I USE SALT STATES?. Available:
 https://docs.saltproject.io/en/latest/topics/tutorials/starting_states.html
 
-https://terokarvinen.com/2022/palvelinten-hallinta-2022p2/?fromSearch=Configuration%20Management%20Systems
-
-https://terokarvinen.com//2018/apache-user-homepages-automatically-salt-package-file-service-example/
-
+kvz.io. 2007. Cat a File, Without the Comments. Available:
 https://kvz.io/cat-a-file-without-the-comments.html
+
+
+https://releases.ubuntu.com/22.04/
 
 https://superuser.com/questions/785187/sudoedit-why-use-it-over-sudo-vi
 
+https://terokarvinen.com/2022/palvelinten-hallinta-2022p2/
+
+https://terokarvinen.com//2018/apache-user-homepages-automatically-salt-package-file-service-example/
+
 https://www.vagrantup.com/
+
+
+
+
+
+
+
