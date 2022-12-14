@@ -210,7 +210,7 @@ Then I just had to write the "localhost" into the search bar again and it worked
 
 # Conclusion
 
-The point of the project was to demonstrate some of the things we were taught on Tero Karvinen's Configuration Management course: </br> https://terokarvinen.com/2022/palvelinten-hallinta-2022p2/?from=MoodleNews#h1-hello-salt
+The point of the project was to demonstrate some of the things we were taught on Tero Karvinen's Configuration Management course: </br> https://terokarvinen.com/2022/palvelinten-hallinta-2022p2/
 
 This project is in my opinion very beginner friendly and supports even a follow along type of structure where anyone with even a little base understanding (such as myself) about Linux operating systems and SaltStack, can follow my project and do it along with it themselves.
 
