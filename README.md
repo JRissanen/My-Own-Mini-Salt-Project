@@ -10,7 +10,8 @@ This project will also show you how you can make two new virtual machines on Vir
 Most of the course the Salt exercises were done locally with one computer so I decided that as a part of this project I want to set up two completely new computers, one being the master computer and the other being the minion computer.
 
 I created both computers as virtual machines in VirtualBox version 6.1. </br>
-For both of my computers I used the same operating system which was Linux Ubuntu 22.04.1 LTS with the desktop image. The link for downloading said OS: https://releases.ubuntu.com/22.04/ 
+For both of my computers I used the same operating system which was Linux Ubuntu 22.04.1 LTS with the desktop image. </br>
+The link for downloading said OS: https://releases.ubuntu.com/22.04/ 
 
 I named the computers as the following screen captures show:
 
@@ -20,7 +21,10 @@ __The Salt-master computer:__ </br>
 __The Salt-minion computer:__ </br>
 ![Screenshot 2022-12-07 183029](https://user-images.githubusercontent.com/116954333/206472854-0e088c31-2aa0-4d76-870c-71357ad60f5d.png)
 
-I also want to point out that everything I do in this project can also be done with Vagrant virtual machines and I would personally even recommend it. Just for the sake of this project, I wanted to create everything with using just VirtualBox as most users are more familiar with it rahter than Vagrant. That being said if you got curious about Vagrant I will link some good articles, where you can find more information about it. </br>
+I also want to point out that everything I do in this project can also be done with Vagrant virtual machines and I would personally even recommend it. Just for the sake of this project, I wanted to create everything with using just VirtualBox as most users are more familiar with it rahter than Vagrant. That being said if you got curious about Vagrant I will link below some good articles, where you can find more information about it. </br>
+
+Vagrant's own website: https://www.vagrantup.com/
+
 Karvinen 2017: https://terokarvinen.com/2017/04/11/vagrant-revisited-install-boot-new-virtual-machine-in-31-seconds/ </br>
 Nowadays Tero Karvinen recommends using `vagrant init debian/bullseye64` instead of `vagrant init bento/ubuntu-16.04`.
                
@@ -238,5 +242,5 @@ https://kvz.io/cat-a-file-without-the-comments.html
 
 https://superuser.com/questions/785187/sudoedit-why-use-it-over-sudo-vi
 
-
+https://www.vagrantup.com/
 
