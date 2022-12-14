@@ -195,7 +195,7 @@ First on the __Minion-PC__ I opened Mozilla FireFox web browser and typed "local
 Now on the __Master-PC__ I ran the following commands: </br>
 To test if the Minion-PC was active and would answer: </br>
 `juliusmaster@Master-PC:~$ sudo salt '*' cmd.run hostname`. </br>
-And to apply the previously created salt state to all the minions (in this case I only had the one: Minion-PC):
+And to apply the previously created salt state to all the minions (in this case I only had the one: Minion-PC): </br>
 `juliusmaster@Master-PC:~$ sudo salt '*' state.apply MyOwnMiniProject`.
 
 The end results were succesful! </br>
@@ -210,25 +210,11 @@ Then I just had to write the "localhost" into the search bar again and it worked
 
 # Conclusion
 
+The point of the project was to demonstrate some of the things we were taught on Tero Karvinen's Configuration Management course: </br> https://terokarvinen.com/2022/palvelinten-hallinta-2022p2/?from=MoodleNews#h1-hello-salt
 
+This project is in my opinion very beginner friendly and supports even a follow along type of structure where anyone with even a little base understanding (such as myself) about Linux operating systems and SaltStack, can follow my project and do it along with it themselves.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+I think I achieved the main goal of the whole course which was to learn how to use the Salt Master and Minion architecture.
 
 __Sources:__
 
@@ -243,4 +229,3 @@ https://kvz.io/cat-a-file-without-the-comments.html
 https://superuser.com/questions/785187/sudoedit-why-use-it-over-sudo-vi
 
 https://www.vagrantup.com/
-
