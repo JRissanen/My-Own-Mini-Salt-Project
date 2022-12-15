@@ -41,6 +41,17 @@ I did it by opening Oracle VM VirtualBox Manager and right clicking the computer
 
 This was a necessary step because if you have it on "NAT" the ip-address for both of the new virtual machines will be the VirtualBox default "10.0.2.15" and then creating the master-minion architechture with SaltStack wouldn't work.
 
+__!!!!!__
+I recieved a great comment/concern about the part above when I presented the project. </br>
+I wasn't aware that Bridged Adapter completely ignores your Computer's firewall and is actually visible online for everyone. </br>
+So keep this in mind if you follow along the project. </br>
+I got recommended to use another Network Adapter and have that behind NAT so that the Virtual environment would be more secure. </br>
+The comment and the fix were recommended by [Antti Halonen](https://github.com/therealhalonen/configuration_management_systems), I will link his work here as well as [Tero Karvinen](https://terokarvinen.com/) the teacher whose work you can also find from the link.
+
+So the fix as mentioned before, have Adapter 1 as NAT and Adapter 2 as Bridged Adapter and then you can have all the security of a NAT Network while also being able to use the IP-address provided by the Bridged Adapter. </br>
+Here is a screen capture of the settings I would now recommend using:
+![Screenshot 2022-12-15 132843](https://user-images.githubusercontent.com/116954333/207849455-c7b87b89-979a-4d43-8705-c2fded00e6e0.png)
+
 Now that the intial settings have been defined properly I was able to start the actual project.
 
 I started with installing Salt-master on the Master-PC and the Salt-minion on the Minion-PC. </br>
