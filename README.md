@@ -41,7 +41,7 @@ I did it by opening Oracle VM VirtualBox Manager and right clicking the computer
 
 This was a necessary step because if you have it on "NAT" the ip-address for both of the new virtual machines will be the VirtualBox default "10.0.2.15" and then creating the master-minion architechture with SaltStack wouldn't work.
 
-__!!!!!__
+### !!!!! </br>
 I recieved a great comment/concern about the part above when I presented the project. </br>
 I wasn't aware that Bridged Adapter completely ignores your Computer's firewall and is actually visible online for everyone. </br>
 So keep this in mind if you follow along the project. </br>
